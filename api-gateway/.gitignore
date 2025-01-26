@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Virtual Environment Directory ###
+volume-data/
