@@ -5,3 +5,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://root:password@localhost:27017/products?authSource=admin
+springdocs:
+  url:
+    swagger-ui: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
