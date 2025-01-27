@@ -15,3 +15,20 @@ order:
 inventory:
   service:
     url: http://localhost:8082
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    urls[0]:
+      name: Product Service
+      url: /aggregate/product-service/v3/api-docs
+    urls[1]:
+      name: Order Service
+      url: /aggregate/order-service/v3/api-docs
+    urls[2]:
+      name: Inventory Service
+      url: /aggregate/inventory-service/v3/api-docs
+
