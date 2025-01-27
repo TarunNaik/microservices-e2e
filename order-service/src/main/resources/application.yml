@@ -15,3 +15,9 @@ server:
 
 inventory-service:
   url: http://localhost:8082
+
+springdocs:
+  url:
+    swagger-ui: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
