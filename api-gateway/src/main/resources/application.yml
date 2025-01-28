@@ -1,6 +1,12 @@
 spring:
   application:
     name: api-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/master
+
 server:
   port: 9000
 
@@ -31,4 +37,5 @@ springdoc:
     urls[2]:
       name: Inventory Service
       url: /aggregate/inventory-service/v3/api-docs
+
 
