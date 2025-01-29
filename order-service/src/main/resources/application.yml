@@ -9,15 +9,25 @@ spring:
     hibernate:
       ddl-auto: none
     show-sql: true
-
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+        default-topic: order-topic
 server:
-  port: 8081
+  port: 9002
 
 inventory-service:
-  url: http://localhost:8082
+  url: http://localhost:9003
 
 springdocs:
   url:
     swagger-ui: /swagger-ui.html
   api-docs:
     path: /v3/api-docs
+
+#Kafka Properties
+
+
