@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: notification-service
+#  elasticsearch:
+#    host: localhost
+#    port: 9200
+#  data:
+#    elasticsearch:
+#      repositories:
+#        enabled: true
+
+
+# Kafka Properties
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring.json.type.mapping: event:com.tsoft.ecomm.order.event.OrderPlacedEvent
+    listener:
+      ack-mode: manual_immediate
+      concurrency: 1
+      poll-timeout: 3000
+    template:
+      default-topic: order-topic
+server:
+  port: 9005
